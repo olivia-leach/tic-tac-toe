@@ -1,2 +1,96 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+$background-color: #4e4e4e;
+$font-color: #dfdfdf;
+$trans-black: rgba(0, 0, 0, .4);
+$light-yellow: #ff9;
+$aqua: rgba(0, 255, 255, .8);
+$alt-font-color: rgb(41, 45, 47);
+
+$board-line: 6px solid $aqua;
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+body {
+  background-image: url('http://img08.deviantart.net/b5aa/i/2015/140/7/c/chalkboard_by_lorelinde-d8u2phm.jpg');
+  background-size: cover;
+  color: $font-color;
+}
+
+h4 {
+  color: $alt-font-color;
+}
+
+.welcome {
+  padding-right: 10px;
+}
+
+.col-md-2 {
+  background-color: none;
+  // cursor: url('../images/X.png'), auto;
+  height: 150px;
+  // padding: 20px;
+
+  &:hover {
+    background-color: $aqua;
+  }
+
+}
+
+.square0,
+.square3,
+.square6 {
+  border-right: $board-line;
+}
+
+.square0,
+.square1,
+.square2 {
+  border-bottom: $board-line;
+}
+
+.square2,
+.square5,
+.square8 {
+  border-left: $board-line;
+}
+
+.square6,
+.square7,
+.square8 {
+  border-top: $board-line;
+}
+
+.logo {
+  height: 45px;
+  margin: -13px 0;
+}
+
+.scoreboard {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.title {
+  height: 35px;
+  margin: 8px -8px;
+}
+
+.navbar-btn {
+  background-color: $trans-black;
+
+  &:hover {
+    background-color: $light-yellow;
+  }
+}
+
+.navbar-bottom {
+  background-color: none;
+}
