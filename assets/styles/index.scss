@@ -44,6 +44,53 @@ h4 {
 
 }
 
+.main {
+  height: 80%;
+  margin-top: 1%;
+  width: 100%;
+  // border: 1px dashed yellow;
+}
+
+.score, .board, .user-stats, {
+  border: 1px dashed white;
+  float: left;
+}
+
+.score, .user-stats {
+  width: 25%;
+  height: 100%;
+}
+
+.board {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.row1,
+.row2,
+.row3 {
+  height: 30%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.square {
+  height: 100%;
+  width: 160px;
+  cursor: pointer;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: rgba(255,255,255,.3);
+  }
+}
+
 .square0,
 .square3,
 .square6 {
@@ -68,6 +115,15 @@ h4 {
   border-top: $board-line;
 }
 
+.btn-new-game {
+  margin: 0 auto;
+  position: fixed;
+  top:50%;
+  left:50%;
+  margin-top: -20px;
+  margin-left: -65px;
+}
+
 .logo {
   height: 45px;
   margin: -13px 0;
@@ -89,6 +145,14 @@ h4 {
   &:hover {
     background-color: $light-yellow;
   }
+}
+
+.register-opp {
+  margin-top: 10px;
+}
+
+label {
+  color: $alt-font-color;
 }
 
 .navbar-bottom {
