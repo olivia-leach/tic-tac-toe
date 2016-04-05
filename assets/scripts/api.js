@@ -21,7 +21,6 @@ const signIn = (success, failure, data) => {
 };
 
 const signOut = (success, failure) => {
-  // if (!app.user) bad;
   console.log("Sign out request queued");
   $.ajax({
     method: 'DELETE',
@@ -33,8 +32,22 @@ const signOut = (success, failure) => {
   .fail(failure);
 };
 
+const changePW = (success, failure, data) => {
+  console.log("Change password request queued");
+  $.ajax({
+    method: 'PATCH',
+    url: app.api + '/change-password/' + app.user.id,
+    data,
+    headers: {
+      Authorization: 'Token token=' + app.user.token,
+    },
+  }).done(success)
+  .fail(failure);
+};
+
 module.exports = {
   signUp,
   signIn,
-  signOut
+  signOut,
+  changePW
 };
