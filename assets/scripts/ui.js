@@ -19,7 +19,15 @@ const signInSuccess = (data) => {
   $("#signInButton").hide();
   $("#registerButton").hide();
   $("#signOutButton").show();
-  $("#welcome").show().text("Welcome, " + app.user.email + "!");
+  $("#welcome").show();
+  $("#user-name").text(app.user.email);
+};
+
+const changePWSuccess = () => {
+  console.log("password successfully changed");
+  $("#change-pw-modal").hide();
+  $(".modal-backdrop").hide(s);
+  $("#success-pw-modal").modal('show');
 };
 
 const success = (data) => {
@@ -38,5 +46,6 @@ module.exports = {
   failure,
   success,
   signInSuccess,
-  signOutSuccess
+  signOutSuccess,
+  changePWSuccess
 };
