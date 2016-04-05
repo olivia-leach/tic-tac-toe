@@ -8,6 +8,7 @@ const authApi = require('./api');
 const authUi = require('./ui');
 const gameApi = require('./gameApi');
 const gameUi = require('./game-ui');
+const tic = require('./game.js');
 
 const addHandlers = () => {
   $('#sign-up').on('submit', function (event) {
@@ -39,8 +40,8 @@ const addHandlers = () => {
   $('#new-game').on('click', function() {
     console.log("new game!");
     $(this).fadeOut();
-    $("#opponent-modal").modal('show');
-    gameApi.create(gameUi.success, gameUi.failure);
+    // $("#opponent-modal").modal('show'); //uncomment to log in user on same machine
+    gameApi.create(gameUi.newGameSuccess, gameUi.failure);
   });
   $('#game-history').on('click', function(event) {
     event.preventDefault();
@@ -48,31 +49,49 @@ const addHandlers = () => {
     gameApi.index(gameUi.success, gameUi.failure);
   });
   $('#square0').on('click', function() {
-    console.log("square0 clicked");
+    $(this).prepend('<img id="marker" class="marker" src="assets/images/' + app.turn + '.png" />');
+    $(this).css( 'pointer-events', 'none' );
+    tic.turn(app.game.cells, app.turn, 0);
   });
   $('#square1').on('click', function() {
-    console.log("square1 clicked");
+    $(this).prepend('<img id="marker" class="marker" src="assets/images/' + app.turn + '.png" />');
+    $(this).css( 'pointer-events', 'none' );
+    tic.turn(app.game.cells, app.turn, 1);
   });
   $('#square2').on('click', function() {
-    console.log("square2 clicked");
+    $(this).prepend('<img id="marker" class="marker" src="assets/images/' + app.turn + '.png" />');
+    $(this).css( 'pointer-events', 'none' );
+    tic.turn(app.game.cells, app.turn, 2);
   });
   $('#square3').on('click', function() {
-    console.log("square3 clicked");
+    $(this).prepend('<img id="marker" class="marker" src="assets/images/' + app.turn + '.png" />');
+    $(this).css( 'pointer-events', 'none' );
+    tic.turn(app.game.cells, app.turn, 3);
   });
   $('#square4').on('click', function() {
-    console.log("square4 clicked");
+    $(this).prepend('<img id="marker" class="marker" src="assets/images/' + app.turn + '.png" />');
+    $(this).css( 'pointer-events', 'none' );
+    tic.turn(app.game.cells, app.turn, 4);
   });
   $('#square5').on('click', function() {
-    console.log("square5 clicked");
+    $(this).prepend('<img id="marker" class="marker" src="assets/images/' + app.turn + '.png" />');
+    $(this).css( 'pointer-events', 'none' );
+    tic.turn(app.game.cells, app.turn, 5);
   });
   $('#square6').on('click', function() {
-    console.log("square6 clicked");
+    $(this).prepend('<img id="marker" class="marker" src="assets/images/' + app.turn + '.png" />');
+    $(this).css( 'pointer-events', 'none' );
+    tic.turn(app.game.cells, app.turn, 6);
   });
   $('#square7').on('click', function() {
-    console.log("square7 clicked");
+    $(this).prepend('<img id="marker" class="marker" src="assets/images/' + app.turn + '.png" />');
+    $(this).css( 'pointer-events', 'none' );
+    tic.turn(app.game.cells, app.turn, 7);
   });
   $('#square8').on('click', function() {
-    console.log("square8 clicked");
+    $(this).prepend('<img id="marker" class="marker" src="assets/images/' + app.turn + '.png" />');
+    $(this).css( 'pointer-events', 'none' );
+    tic.turn(app.game.cells, app.turn, 8);
   });
 };
 
