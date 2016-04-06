@@ -40,6 +40,7 @@ const addHandlers = () => {
   $('#new-game').on('click', function() {
     console.log("new game!");
     $(this).fadeOut();
+    $(".square").css( 'pointer-events', 'all' );
     // $("#opponent-modal").modal('show'); //uncomment to log in user on same machine
     gameApi.create(gameUi.newGameSuccess, gameUi.failure);
   });
