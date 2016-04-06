@@ -1,6 +1,8 @@
 'use strict';
 
 const app = require('./app-data.js');
+const gameApi = require('./gameApi');
+const gameUi = require('./game-ui');
 
 const signOutSuccess = (data) => {
   app.user = data;
@@ -17,19 +19,20 @@ const signInSuccess = (data) => {
   app.xWins = 0;
   app.oWins = 0;
   app.catWins = 0;
-  console.log(data.user);
+  console.log(app.user);
   console.log(data.user.email + " logged in");
   $("#signInButton").hide();
   $("#registerButton").hide();
   $("#signOutButton").show();
   $("#welcome").show();
   $("#user-name").text(app.user.email);
+  gameApi.index(gameUi.indexGameSuccess, gameUi.failure);
 };
 
 const changePWSuccess = () => {
   console.log("password successfully changed");
   $("#change-pw-modal").hide();
-  $(".modal-backdrop").hide(s);
+  $(".modal-backdrop").hide();
   $("#success-pw-modal").modal('show');
 };
 
