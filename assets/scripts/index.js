@@ -7,4 +7,5 @@ $(() => {
   authEvents.addHandlers();
   $("#signOutButton").hide();
   $("#welcome").hide();
+  document.body.style.overflow = 'hidden';
 });
