@@ -47,7 +47,7 @@ const addHandlers = () => {
   $('#game-history').on('click', function(event) {
     event.preventDefault();
     console.log("game history clicked");
-    gameApi.index(gameUi.success, gameUi.failure);
+    gameApi.index(gameUi.indexGameSuccess, gameUi.failure);
   });
   $('#square0').on('click', function() {
     $(this).prepend('<img id="marker" class="marker" src="assets/images/' + app.turn + '.png" />');
