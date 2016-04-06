@@ -2,19 +2,28 @@
 
 const app = require('./app-data.js');
 const gameApi = require('./gameApi.js');
-const gameUi = require('./game-ui.js');
 
 const gameSetUp = (board) => {
+  $('.square > img').remove();
+  $("#gameOver").fadeOut();
+  $("#xWins").fadeOut();
+  $("#oWins").fadeOut();
+  $("#catWins").fadeOut();
   console.log(board);
   app.turn = "x";
+  app.winner = "";
   app.numTurns = 0;
   console.log("Player 1's turn : " + app.turn);
+  $("#player1turn").show();
   console.log(app);
 };
 
 const turn = (board, marker, square) => {
 
   const gameUi = require('./game-ui.js');
+
+  // let rand = Math.floor(Math.random() * (80 - 20 + 1) + 20);
+  // $("#player2turn").attr("margin-top",rand);
 
   console.log(marker + " plays on square " + square + ".");
   board[square] = marker;
@@ -49,13 +58,37 @@ const turn = (board, marker, square) => {
     console.log ("Next player's turn.");
   }
 
+  if (app.game.over === true) {
+    $(".square").css( 'pointer-events', 'none' );
+    $("#gameOver").slideUp( 300 ).delay( 100 ).fadeIn( 400 );
+    $("#new-game").text("Play again!").slideUp( 300 ).delay( 3000 ).fadeIn( 400 );
+  }
+
+  if (app.winner === "x") {
+    $("#xWins").slideUp( 300 ).delay( 1500 ).fadeIn( 400 );
+    $("#player2turn").hide();
+  } else if (app.winner === "o") {
+    $("#oWins").slideUp( 300 ).delay( 1500 ).fadeIn( 400 );
+    $("#player1turn").hide();
+  } else if (app.winner === "cat") {
+    $("#catWins").slideUp( 300 ).delay( 1500 ).fadeIn( 400 );
+    $("#player2turn").hide();
+  }
+
   let data = "{\"game\": {\"cell\": {\"index\":" + square + ",\"value\": \"" + marker + "\"},\"over\":" + app.game.over + "}}";
   gameApi.update(gameUi.updateGameSuccess, gameUi.failure, data);
 
-  if (marker === "x") {
+  if (app.game.over === true) {
+    $("#player2turn").hide();
+    $("#player1turn").hide();
+  } else if (marker === "x") {
     app.turn = "o";
+    $("#player2turn").show();
+    $("#player1turn").hide();
   } else {
     app.turn = "x";
+    $("#player2turn").hide();
+    $("#player1turn").show();
   }
 
   app.numTurns += 1;
