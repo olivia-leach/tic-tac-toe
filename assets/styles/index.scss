@@ -187,7 +187,7 @@ h4 {
 
 .player1-turn {
   height: 8%;
-  left: 5%;
+  left: 30%;
   // margin: 0 auto;
   position: fixed;
   top: 20%;
@@ -196,11 +196,11 @@ h4 {
 
 .player2-turn {
   height: 8%;
-  right: 5%;
+  right: 30%;
   // margin: 0 auto;
   position: fixed;
-  top: 20%;
-  transform: rotate(18deg);
+  top: 75%;
+  transform: rotate(10deg);
 }
 
 .winner {
@@ -235,6 +235,31 @@ h4 {
 .scoreboard {
   margin: 0 auto;
   width: 100%;
+}
+
+.game-history {
+  background-color: $trans-black;
+  margin-top: 20px;
+}
+
+.table tbody tr:hover td, .table tbody tr:hover th {
+  background-color: $light-yellow;
+  color: $alt-font-color;
+}
+
+.stat {
+  font-size: 70px;
+  font-weight: bold;
+  color: $light-yellow;
+  margin-bottom: -20px;
+}
+
+.btn-game-history {
+  margin-top: 60px;
+}
+
+.stat-label {
+  font-size: 18px;
 }
 
 .title {
