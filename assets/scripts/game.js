@@ -64,17 +64,24 @@ const turn = (board, marker, square) => {
     $(".square").css( 'pointer-events', 'none' );
     $("#gameOver").slideUp( 300 ).delay( 100 ).fadeIn( 400 );
     $('#new-game > img').remove();
-    $("#new-game").prepend('<img class="new-game-img" src="assets/images/playAgain.png" />').slideUp( 300 ).delay( 3000 ).fadeIn( 400 );
+    $("#new-game").prepend('<img class="new-game-img" src="assets/images/playAgain.png" />').slideUp( 300 ).delay( 2000 ).fadeIn( 400 );
   }
 
   if (app.winner === "x") {
     $("#xWins").slideUp( 300 ).delay( 1000 ).fadeIn( 400 );
     $("#player2turn").hide();
+
     app.xWins += 1;
     if (app.xWins === 1) {
       $('#x-score-num > img').remove();
+      $("#x-score-num").append('<img src="assets/images/one.png" class="score-num"/>');
+    } else if (app.xWins%5 === 0) {
+      $('#x-score-num > img').remove();
+      $("#x-score-num").append('<img src="assets/images/five.png" class="score-num"/>');
+    } else {
+      $("#x-score-num").append('<img src="assets/images/one.png" class="score-num"/>');
     }
-    $("#x-score-num").prepend('<img src="assets/images/one.png" class="score-num"/>');
+
   } else if (app.winner === "o") {
     $("#oWins").slideUp( 300 ).delay( 1000 ).fadeIn( 400 );
     $("#player1turn").hide();
@@ -93,7 +100,18 @@ const turn = (board, marker, square) => {
   } else if (app.winner === "cat") {
     $("#catWins").slideUp( 300 ).delay( 1000 ).fadeIn( 400 );
     $("#player2turn").hide();
+
     app.catWins += 1;
+    if (app.catWins === 1) {
+      $('#cat-score-num > img').remove();
+      $("#cat-score-num").append('<img src="assets/images/one.png" class="score-num"/>');
+    } else if (app.catWins%5 === 0) {
+      $('#cat-score-num > img').remove();
+      $("#cat-score-num").append('<img src="assets/images/five.png" class="score-num"/>');
+    } else {
+      $("#cat-score-num").append('<img src="assets/images/one.png" class="score-num"/>');
+    }
+
   }
 
   let data = "{\"game\": {\"cell\": {\"index\":" + square + ",\"value\": \"" + marker + "\"},\"over\":" + app.game.over + "}}";
