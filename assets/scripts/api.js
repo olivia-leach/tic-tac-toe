@@ -12,6 +12,7 @@ const signUp = (success, failure, data) => {
 };
 
 const signIn = (success, failure, data) => {
+  console.log(data);
   console.log("Sign in request queued");
   $.ajax({
     method : 'POST',
