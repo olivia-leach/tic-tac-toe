@@ -85,6 +85,7 @@ h4 {
   width: 160px;
   cursor: pointer;
   border-radius: 5px;
+  pointer-events: none;
 
   &:hover {
     background-color: rgba(255,255,255,.3);
@@ -118,10 +119,68 @@ h4 {
 .btn-new-game {
   margin: 0 auto;
   position: fixed;
+  border: 2px solid yellow;
   top:50%;
   left:50%;
   margin-top: -20px;
   margin-left: -65px;
+}
+
+.shadowed {
+  -webkit-filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.7)); filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.7));
+}
+
+.game-over {
+  left: 40%;
+  margin: 0 auto;
+  margin-left: -200px;
+  margin-top: -100px;
+  position: fixed;
+  top: 35%;
+  transform: rotate(-20deg);
+  height: 12%;
+}
+
+.player1-turn {
+  height: 8%;
+  left: 5%;
+  // margin: 0 auto;
+  position: fixed;
+  top: 20%;
+  transform: rotate(-18deg);
+}
+
+.player2-turn {
+  height: 8%;
+  right: 5%;
+  // margin: 0 auto;
+  position: fixed;
+  top: 20%;
+  transform: rotate(18deg);
+}
+
+.winner {
+  left: 70%;
+  margin: 0 auto;
+  margin-left: -200px;
+  margin-top: -100px;
+  position: fixed;
+  top: 45%;
+  transform: rotate(15deg);
+  height: 16%;
+  opacity: .9;
+}
+
+.cat {
+  left: 50%;
+  margin: 0 auto;
+  margin-left: -200px;
+  margin-top: -100px;
+  position: fixed;
+  top: 65%;
+  transform: rotate(15deg);
+  height: 13%;
+  opacity: .9;
 }
 
 .logo {
