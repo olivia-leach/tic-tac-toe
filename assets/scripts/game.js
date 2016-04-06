@@ -61,18 +61,37 @@ const turn = (board, marker, square) => {
   if (app.game.over === true) {
     $(".square").css( 'pointer-events', 'none' );
     $("#gameOver").slideUp( 300 ).delay( 100 ).fadeIn( 400 );
-    $("#new-game").text("Play again!").slideUp( 300 ).delay( 3000 ).fadeIn( 400 );
+    $('#new-game > img').remove();
+    $("#new-game").prepend('<img class="new-game-img" src="assets/images/playAgain.png" />').slideUp( 300 ).delay( 3000 ).fadeIn( 400 );
   }
 
   if (app.winner === "x") {
-    $("#xWins").slideUp( 300 ).delay( 1500 ).fadeIn( 400 );
+    $("#xWins").slideUp( 300 ).delay( 1000 ).fadeIn( 400 );
     $("#player2turn").hide();
+    app.xWins += 1;
+    if (app.xWins === 1) {
+      $('#x-score-num > img').remove();
+    }
+    $("#x-score-num").prepend('<img src="assets/images/one.png" class="score-num"/>');
   } else if (app.winner === "o") {
-    $("#oWins").slideUp( 300 ).delay( 1500 ).fadeIn( 400 );
+    $("#oWins").slideUp( 300 ).delay( 1000 ).fadeIn( 400 );
     $("#player1turn").hide();
+
+    app.oWins += 1;
+    if (app.oWins === 1) {
+      $('#o-score-num > img').remove();
+      $("#o-score-num").append('<img src="assets/images/one.png" class="score-num"/>');
+    } else if (app.oWins%5 === 0) {
+      $('#o-score-num > img').remove();
+      $("#o-score-num").append('<img src="assets/images/five.png" class="score-num"/>');
+    } else {
+      $("#o-score-num").append('<img src="assets/images/one.png" class="score-num"/>');
+    }
+
   } else if (app.winner === "cat") {
-    $("#catWins").slideUp( 300 ).delay( 1500 ).fadeIn( 400 );
+    $("#catWins").slideUp( 300 ).delay( 1000 ).fadeIn( 400 );
     $("#player2turn").hide();
+    app.catWins += 1;
   }
 
   let data = "{\"game\": {\"cell\": {\"index\":" + square + ",\"value\": \"" + marker + "\"},\"over\":" + app.game.over + "}}";
