@@ -187,6 +187,33 @@
         </div>
       </div>
 
+      <!-- Game History Modal -->
+      <div class="modal fade" id="game-history-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel">TicTacToe Gaming History</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table game-history-table table-hover table-condensed" id="game-history-table" hidden>
+                <thead>
+                  <tr>
+                    <th class="text-center">#</th>
+                    <th class="text-center">Played As</th>
+                    <th class="text-center">Complete</th>
+                    <th class="text-center">Winner</th>
+                  </tr>
+                </thead>
+                <tbody>
+                </tbody>
+              </table>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="main">
 
         <div class="score">
@@ -201,6 +228,14 @@
             <img src="assets/images/colon.png" class="colon"/>
             <a id="o-score-num"><img src="assets/images/zero.png" class="score-num"/></a>
           </div>
+          <div class="cat-score-block score-block">
+            <img src="assets/images/cat.png" class="cat-score-label"/>
+            <img src="assets/images/colon.png" class="cat-colon"/>
+            <a id="cat-score-num"><img src="assets/images/zero.png" class="score-num"/></a>
+          </div>
+          <button type="button" id="clear-score" class="btn btn-primary btn-lg btn-clear-score">
+            Clear Scoreboard
+          </button>
         </div>
 
         <div class="board">
@@ -225,48 +260,33 @@
           <div>
             <img src="assets/images/playerStats.png" class="player-stats-img"/>
           </div>
-          <div class="stat" id="gamesPlayed">23</div>
+          <div class="stat" id="gamesPlayed">-</div>
           <div class="stat-label">Games Played</div>
-          <div class="stat" id="gamesWon">4</div>
+          <div class="stat" id="gamesWon">-</div>
           <div class="stat-label">Games Won</div>
-          <div class="stat" id="percent">9%</div>
+          <div class="stat" id="percent">-</div>
           <div class="stat-label">Success Rate</div>
-          <button type="button" id="game-history" class="btn btn-primary btn-game-history" autocomplete="off">
-            Retrieve full game history
+          <button type="button" id="game-history" class="btn btn-primary btn-lg btn-game-history" data-toggle="modal" data-target="#game-history-modal" autocomplete="off">
+            See full game history
           </button>
-
-          <table class="table game-history table-inverse" id="game-history-table" hidden>
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Played As</th>
-                <th>Complete</th>
-                <th>Winner</th>
-              </tr>
-            </thead>
-            <tbody>
-            </tbody>
-          </table>
 
         </div>
 
         <a id="gameOver" hidden><img src="assets/images/gameOver.png" class="game-over shadowed"/></a>
-        <a id="xWins" hidden><img src="assets/images/xWins.png" class="winner shadowed"/></a>
+        <a id="xWins"hidden><img src="assets/images/xWins.png" class="winner shadowed"/></a>
         <a id="oWins" hidden><img src="assets/images/oWins.png" class="winner shadowed"/></a>
         <a id="catWins" hidden><img src="assets/images/catWins.png" class="cat shadowed"/></a>
         <a id="player1turn" hidden><img src="assets/images/player1turn.png" class="player1-turn shadowed"/></a>
         <a id="player2turn" hidden><img src="assets/images/player2turn.png" class="player2-turn shadowed"/></a>
 
-        <button type="button" id="new-game" class="btn btn-primary btn-lg btn-new-game shadowed" autocomplete="off">
+        <button type="button" id="new-game" class="btn btn-primary btn-lg btn-new-game" autocomplete="off">
           <img src="assets/images/newGame.png" class="new-game-img"/>
         </button>
 
       </div>
 
       <nav class="navbar navbar-inverse navbar-fixed-bottom navbar-bottom" id="foot">
-        <div class="container">
-          <div class="row">@olivia-leach</div>
-        </div>
+        @olivia-leach
       </nav>
 
     </body>
