@@ -30,7 +30,7 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
               <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="welcome">Welcome <span id="user-name">User</span>! <span class="caret"></span></a>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="welcome">Welcome, <span id="user-name">User</span>! <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                   <li><a href="#" data-toggle="modal" data-target="#sign-out-modal">Sign out</a></li>
                   <li><a href="#" data-toggle="modal" data-target="#change-pw-modal">Change password</a></li>
@@ -190,7 +190,17 @@
       <div class="main">
 
         <div class="score">
-          Scoreboard
+          <div class="scoreboard"><img src="assets/images/scoreboardTitle.png" class="scoreboard-img"/></div>
+          <div class="x-score-block score-block">
+            <img src="assets/images/xYellow.png" class="score-label"/>
+            <img src="assets/images/colon.png" class="colon"/>
+            <a id="x-score-num"><img src="assets/images/zero.png" class="score-num"/></a>
+          </div>
+          <div class="o-score-block score-block">
+            <img src="assets/images/oYellow.png" class="score-label"/>
+            <img src="assets/images/colon.png" class="colon"/>
+            <a id="o-score-num"><img src="assets/images/zero.png" class="score-num"</a>
+          </div>
         </div>
 
         <div class="board">
@@ -212,7 +222,7 @@
         </div>
 
         <div class="user-stats">
-          User Stats
+          <div><img src="assets/images/playerStats.png" class="player-stats-img"/></div>
           <button type="button" id="game-history" class="btn btn-primary btn-game-history" autocomplete="off">
             See game history
           </button>
@@ -225,8 +235,8 @@
         <a id="player1turn" hidden><img src="assets/images/player1turn.png" class="player1-turn shadowed"/></a>
         <a id="player2turn" hidden><img src="assets/images/player2turn.png" class="player2-turn shadowed"/></a>
 
-        <button type="button" id="new-game" class="btn btn-primary btn-lg btn-new-game" autocomplete="off">
-          New Game!
+        <button type="button" id="new-game" class="btn btn-primary btn-lg btn-new-game shadowed" autocomplete="off">
+          <img src="assets/images/newGame.png" class="new-game-img"/>
         </button>
 
       </div>
