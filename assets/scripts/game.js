@@ -1,7 +1,7 @@
 'use strict';
 
 const app = require('./app-data.js');
-const gameApi = require('./gameApi.js');
+// const gameApi = require('./gameApi.js');
 
 const gameSetUp = (board) => {
   $('.square > img').remove();
@@ -21,6 +21,7 @@ const gameSetUp = (board) => {
 const turn = (board, marker, square) => {
 
   const gameUi = require('./game-ui.js');
+  const gameApi = require('./gameApi.js');
 
   // let rand = Math.floor(Math.random() * (80 - 20 + 1) + 20);
   // $("#player2turn").attr("margin-top",rand);
@@ -59,6 +60,7 @@ const turn = (board, marker, square) => {
   }
 
   if (app.game.over === true) {
+    gameApi.index(gameUi.indexGameSuccess, gameUi.failure);
     $(".square").css( 'pointer-events', 'none' );
     $("#gameOver").slideUp( 300 ).delay( 100 ).fadeIn( 400 );
     $('#new-game > img').remove();
