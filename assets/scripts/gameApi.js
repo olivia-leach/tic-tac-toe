@@ -24,7 +24,22 @@ const create = (success, failure) => {
   }).done(success).fail(failure);
 };
 
+const update = (success, failure, data) => {
+  console.log("Update game request queued");
+  $.ajax({
+    method : 'PATCH',
+    url : app.api + '/games/' + app.game.id,
+    processData : false,
+    data,
+    headers : {
+      Authorization : "Token token=" + app.user.token,
+      "content-type": "application/json",
+    },
+  }).done(success).fail(failure);
+};
+
 module.exports = {
   index,
-  create
+  create,
+  update
 };
