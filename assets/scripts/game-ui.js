@@ -19,8 +19,7 @@ const updateGameSuccess = (data) => {
 };
 
 const indexGameSuccess = (data) => {
-  console.log(data);
-  console.log("game history saved");
+  console.log("game history synced");
   app.gameHistory = data;
   console.log(app.gameHistory);
   $("#gamesPlayed").text(app.gameHistory.games.length);
@@ -62,17 +61,25 @@ const indexGameSuccess = (data) => {
       app.gameHistory.games[i].winner = "Cat";
     }
 
+    let winnerClass;
+    if (app.gameHistory.games[i].winner === playedAs) {
+      winCount += 1;
+      winnerClass = "success";
+    } else if (app.gameHistory.games[i].winner === "Cat"){
+      winnerClass = "warning";
+    } else if (app.gameHistory.games[i].winner === "---"){
+      winnerClass = "";
+    } else {
+      winnerClass = "danger";
+    }
+
     $("#game-history-table").find('tbody')
-      .append($('<tr>')
+      .append($('<tr class=' + winnerClass + '>')
         .append($('<td>').text(i + 1))
         .append($('<td>').text(playedAs))
         .append($('<td>').text(over))
         .append($('<td>').text(app.gameHistory.games[i].winner))
       );
-
-      if (app.gameHistory.games[i].winner === playedAs) {
-        winCount += 1;
-      }
 
   }
 
