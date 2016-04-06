@@ -199,7 +199,7 @@
           <div class="o-score-block score-block">
             <img src="assets/images/oYellow.png" class="score-label"/>
             <img src="assets/images/colon.png" class="colon"/>
-            <a id="o-score-num"><img src="assets/images/zero.png" class="score-num"</a>
+            <a id="o-score-num"><img src="assets/images/zero.png" class="score-num"/></a>
           </div>
         </div>
 
@@ -222,10 +222,32 @@
         </div>
 
         <div class="user-stats">
-          <div><img src="assets/images/playerStats.png" class="player-stats-img"/></div>
+          <div>
+            <img src="assets/images/playerStats.png" class="player-stats-img"/>
+          </div>
+          <div class="stat" id="gamesPlayed">23</div>
+          <div class="stat-label">Games Played</div>
+          <div class="stat" id="gamesWon">4</div>
+          <div class="stat-label">Games Won</div>
+          <div class="stat" id="percent">9%</div>
+          <div class="stat-label">Success Rate</div>
           <button type="button" id="game-history" class="btn btn-primary btn-game-history" autocomplete="off">
-            See game history
+            Retrieve full game history
           </button>
+
+          <table class="table game-history table-inverse" id="game-history-table" hidden>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Played As</th>
+                <th>Complete</th>
+                <th>Winner</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+
         </div>
 
         <a id="gameOver" hidden><img src="assets/images/gameOver.png" class="game-over shadowed"/></a>
