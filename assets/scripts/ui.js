@@ -14,6 +14,9 @@ const signOutSuccess = (data) => {
 
 const signInSuccess = (data) => {
   app.user = data.user;
+  app.xWins = 0;
+  app.oWins = 0;
+  app.catWins = 0;
   console.log(data.user);
   console.log(data.user.email + " logged in");
   $("#signInButton").hide();
