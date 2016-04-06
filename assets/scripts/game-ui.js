@@ -14,8 +14,8 @@ const newGameSuccess = (data) => {
 const updateGameSuccess = (data) => {
   console.log(data);
   console.log("game successfully updated");
-  // app.game = data.game;
-  // console.log(app.game.cells);
+  app.game = data.game;
+  console.log(app.game.cells);
 };
 
 const success = (data) => {
