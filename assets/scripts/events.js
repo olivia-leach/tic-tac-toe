@@ -44,11 +44,11 @@ const addHandlers = () => {
     // $("#opponent-modal").modal('show'); //uncomment to log in user on same machine
     gameApi.create(gameUi.newGameSuccess, gameUi.failure);
   });
-  $('#game-history').on('click', function(event) {
-    event.preventDefault();
-    console.log("game history clicked");
-    gameApi.index(gameUi.indexGameSuccess, gameUi.failure);
-  });
+  // $('#game-history').on('click', function(event) {
+  //   event.preventDefault();
+  //   console.log("game history clicked");
+  //   gameApi.index(gameUi.indexGameSuccess, gameUi.failure);
+  // });
   $('#square0').on('click', function() {
     $(this).prepend('<img id="marker" class="marker" src="assets/images/' + app.turn + '.png" />');
     $(this).css( 'pointer-events', 'none' );
@@ -93,6 +93,15 @@ const addHandlers = () => {
     $(this).prepend('<img id="marker" class="marker" src="assets/images/' + app.turn + '.png" />');
     $(this).css( 'pointer-events', 'none' );
     tic.turn(app.game.cells, app.turn, 8);
+  });
+  $('#clear-score').on('click', function() {
+    $('#x-score-num > img').remove();
+    $('#o-score-num > img').remove();
+    $('#cat-score-num > img').remove();
+    $("#x-score-num").append('<img src="assets/images/zero.png" class="score-num"/>');
+    $("#o-score-num").append('<img src="assets/images/zero.png" class="score-num"/>');
+    $("#cat-score-num").append('<img src="assets/images/zero.png" class="score-num"/>');
+
   });
 };
 
