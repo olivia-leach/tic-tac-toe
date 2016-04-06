@@ -1,6 +1,8 @@
 'use strict';
 
 const app = require('./app-data.js');
+const gameApi = require('./gameApi.js');
+const gameUi = require('./game-ui.js');
 
 const gameSetUp = (board) => {
   console.log(board);
@@ -11,6 +13,9 @@ const gameSetUp = (board) => {
 };
 
 const turn = (board, marker, square) => {
+
+  const gameUi = require('./game-ui.js');
+
   console.log(marker + " plays on square " + square + ".");
   board[square] = marker;
 
@@ -39,12 +44,14 @@ const turn = (board, marker, square) => {
     app.winner = marker;
   } else if (app.game.over === true) {
     console.log ("Game over. Cat's game.");
-    app.winner = cat;
+    app.winner = 'cat';
   } else {
     console.log ("Next player's turn.");
   }
 
-  app.game.cells = board;
+  let data = "{\"game\": {\"cell\": {\"index\":" + square + ",\"value\": \"" + marker + "\"},\"over\":" + app.game.over + "}}";
+  gameApi.update(gameUi.updateGameSuccess, gameUi.failure, data);
+
   if (marker === "x") {
     app.turn = "o";
   } else {
