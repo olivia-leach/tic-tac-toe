@@ -76,7 +76,7 @@ h4 {
 .x-score-block {
   margin-left: -10px;
   position: absolute;;
-  left: 60px;
+  left: 64px;
 }
 
 .o-score-block {
@@ -86,15 +86,31 @@ h4 {
   top: 275px;
 }
 
+.cat-score-block {
+  margin-left: -10px;
+  position: absolute;;
+  left: 30px;
+  top: 368px;
+}
+
 .score-label {
   height: 100px;
-  padding-right: 5px;
+  margin-right: 20px;
 }
 
 .colon {
   height: 100px;
   padding-right: 30px;
+}
 
+.cat-score-label {
+  height: 115px;
+  padding-right: -5px;
+}
+
+.cat-colon {
+  height: 100px;
+  padding-right: 30px;
 }
 
 .score-num {
@@ -171,7 +187,7 @@ h4 {
 }
 
 .shadowed {
-  -webkit-filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5)); filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.5));
+  -webkit-filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.7)); filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.7));
 }
 
 .game-over {
@@ -204,12 +220,12 @@ h4 {
 }
 
 .winner {
-  left: 70%;
+  left: 60%;
   margin: 0 auto;
   margin-left: -200px;
   margin-top: -100px;
   position: fixed;
-  top: 45%;
+  top: 78%;
   transform: rotate(15deg);
   height: 16%;
   opacity: .9;
@@ -237,14 +253,19 @@ h4 {
   width: 100%;
 }
 
-.game-history {
-  background-color: $trans-black;
-  margin-top: 20px;
+.game-history-table {
+  // background-color: $trans-black;
+  color: $alt-font-color;
+}
+
+.table td {
+  text-align: center;
 }
 
 .table tbody tr:hover td, .table tbody tr:hover th {
-  background-color: $light-yellow;
-  color: $alt-font-color;
+  // background-color: $light-yellow;
+  // color: $alt-font-color;
+  font-weight: bold;
 }
 
 .stat {
@@ -256,6 +277,11 @@ h4 {
 
 .btn-game-history {
   margin-top: 60px;
+}
+
+.btn-clear-score {
+  position: relative;
+  top: 370px;
 }
 
 .stat-label {
