@@ -1,0 +1,56 @@
+.score,
+.board,
+.user-stats, {
+  float: left;
+}
+
+.score,
+.user-stats {
+  height: 100%;
+  width: 25%;
+}
+
+.scoreboard-img,
+.player-stats-img {
+  height: 100px;
+  margin: 0 auto;
+  padding: 40px 20px 10px;
+}
+
+.o-score-block {
+  margin-left: -4px;
+}
+
+.cat-score-block {
+  margin-left: -30px;
+}
+
+.score-label {
+  height: 100px;
+  margin-right: 20px;
+}
+
+.colon {
+  height: 100px;
+  padding-right: 30px;
+}
+
+.cat-score-label {
+  height: 115px;
+  padding-right: -5px;
+}
+
+.cat-colon {
+  height: 100px;
+  padding-right: 30px;
+}
+
+.score-num {
+  height: 80px;
+  left: 80px;
+}
+
+.scoreboard {
+  margin: 0 auto;
+  width: 100%;
+}

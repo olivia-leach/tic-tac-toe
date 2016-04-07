@@ -1,0 +1,116 @@
+.board {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  width: 50%;
+}
+
+.row1,
+.row2,
+.row3 {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 28%;
+  justify-content: center;
+}
+
+.square {
+  border-radius: 5px;
+  cursor: pointer;
+  height: 100%;
+  pointer-events: none;
+  width: 160px;
+
+  &:hover {
+    background-color: $trans-white;
+  }
+}
+
+.square0,
+.square3,
+.square6 {
+  border-right: $board-line;
+}
+
+.square0,
+.square1,
+.square2 {
+  border-bottom: $board-line;
+}
+
+.square2,
+.square5,
+.square8 {
+  border-left: $board-line;
+}
+
+.square6,
+.square7,
+.square8 {
+  border-top: $board-line;
+}
+
+.shadowed {
+  -webkit-filter: drop-shadow(12px 12px 7px $shadow-black);
+  filter: drop-shadow(12px 12px 7px $shadow-black);
+}
+
+.game-over {
+  height: 12%;
+  left: 40%;
+  margin: 0 auto;
+  margin-left: -200px;
+  margin-top: -100px;
+  position: fixed;
+  top: 35%;
+  transform: rotate(-20deg);
+}
+
+.player1-turn {
+  height: 8%;
+  left: 30%;
+  pointer-events: none;
+  position: fixed;
+  top: 20%;
+  transform: rotate(-18deg);
+}
+
+.player2-turn {
+  height: 8%;
+  pointer-events: none;
+  position: fixed;
+  right: 30%;
+  top: 75%;
+  transform: rotate(10deg);
+}
+
+.winner {
+  height: 16%;
+  left: 60%;
+  margin: 0 auto;
+  margin-left: -200px;
+  margin-top: -100px;
+  opacity: .9;
+  position: fixed;
+  top: 78%;
+  transform: rotate(15deg);
+}
+
+.cat {
+  height: 13%;
+  left: 50%;
+  margin: 0 auto;
+  margin-left: -200px;
+  margin-top: -100px;
+  opacity: .9;
+  position: fixed;
+  top: 65%;
+  transform: rotate(15deg);
+}
+
+.marker {
+  height: 100%;
+}

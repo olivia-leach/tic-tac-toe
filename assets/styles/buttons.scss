@@ -1,0 +1,19 @@
+.btn-new-game {
+  display: none;
+  left: 50%;
+  margin: 0 auto;
+  margin-left: -130px;
+  margin-top: -25px;
+  position: fixed;
+  top: 50%;
+}
+
+.new-game-img {
+  height: 50px;
+}
+
+.btn-game-history,
+.btn-clear-score {
+  margin-top: 60px;
+  pointer-events: none;
+}
