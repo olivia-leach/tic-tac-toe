@@ -11,6 +11,12 @@ const gameUi = require('./game-ui');
 const tic = require('./game.js');
 
 const addHandlers = () => {
+  $('.main').on('mouseover', function() {
+    $('#log-in-here-img').addClass("shake");
+  });
+  $('.main').on('mouseout', function() {
+    $('#log-in-here-img').removeClass("shake");
+  });
   $('#sign-up').on('submit', function (event) {
     let data = getFormFields(this);
     event.preventDefault();
