@@ -22,6 +22,9 @@ const indexGameSuccess = (data) => {
   console.log("game history synced");
   app.gameHistory = data;
   console.log(app.gameHistory);
+
+  let gamesPlayed = app.gameHistory.games.length;
+
   $("#gamesPlayed").text(app.gameHistory.games.length);
   $("#game-history-table").show();
   let winCount = 0;
@@ -84,7 +87,14 @@ const indexGameSuccess = (data) => {
   }
 
   $("#gamesWon").text(winCount);
-  $("#percent").text(Math.round(100 * (winCount/app.gameHistory.games.length),0) + '%');
+
+  let percent = Math.round(100 * (winCount/app.gameHistory.games.length),0) + "%";
+
+  if (gamesPlayed === 0) {
+    percent = "-";
+  }
+
+  $("#percent").text(percent);
 
 };
 
