@@ -14,21 +14,21 @@ const addHandlers = () => {
   $('#sign-up').on('submit', function (event) {
     let data = getFormFields(this);
     event.preventDefault();
-    authApi.signUp(authUi.success, authUi.failure, data);
-    $("#sign-up-modal").hide();
+    authApi.signUp(authUi.registerSuccess, authUi.regFail, data);
+    $("#sign-up-modal").modal('hide');
     $(".modal-backdrop").hide();
   });
   $('#sign-in').on('submit', function(event) {
     let data = getFormFields(this);
     event.preventDefault();
-    authApi.signIn(authUi.signInSuccess, authUi.failure, data);
-    $("#log-in-modal").hide();
+    authApi.signIn(authUi.signInSuccess, authUi.signInFail, data);
+    $("#log-in-modal").modal('hide');
     $(".modal-backdrop").hide();
   });
   $('#sign-out').on('submit', function(event) {
     event.preventDefault();
     authApi.signOut(authUi.signOutSuccess, authUi.failure);
-    $("#sign-out-modal").hide();
+    $("#sign-out-modal").modal('hide');
     $(".modal-backdrop").hide();
   });
   $('#change-pw').on('submit', function(event) {
@@ -38,17 +38,11 @@ const addHandlers = () => {
     authApi.changePW(authUi.changePWSuccess, authUi.failure, data);
   });
   $('#new-game').on('click', function() {
-    console.log("new game!");
-    $(this).fadeOut();
-    $(".square").css( 'pointer-events', 'all' );
-    // $("#opponent-modal").modal('show'); //uncomment to log in user on same machine
-    gameApi.create(gameUi.newGameSuccess, gameUi.failure);
+      console.log("new game!");
+      $(this).fadeOut();
+      $(".square").css( 'pointer-events', 'all' );
+      gameApi.create(gameUi.newGameSuccess, gameUi.failure);
   });
-  // $('#game-history').on('click', function(event) {
-  //   event.preventDefault();
-  //   console.log("game history clicked");
-  //   gameApi.index(gameUi.indexGameSuccess, gameUi.failure);
-  // });
   $('#square0').on('click', function() {
     $(this).prepend('<img id="marker" class="marker" src="assets/images/' + app.turn + '.png" />');
     $(this).css( 'pointer-events', 'none' );
