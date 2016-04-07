@@ -3,10 +3,11 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 
 $background-color: #4e4e4e;
 $font-color: #dfdfdf;
-$trans-black: rgba(0, 0, 0, .4);
+$trans-black: rgba(0, 0, 0, .9);
 $light-yellow: rgb(255, 229, 0);
 $aqua: rgba(0, 255, 255, .8);
-$alt-font-color: rgb(41, 45, 47);
+$alt-font-color: #444;
+$chalkboard: 'http://img08.deviantart.net/b5aa/i/2015/140/7/c/chalkboard_by_lorelinde-d8u2phm.jpg';
 
 $board-line: 6px solid $aqua;
 
@@ -19,14 +20,35 @@ body {
 }
 
 body {
-  background-image: url('http://img08.deviantart.net/b5aa/i/2015/140/7/c/chalkboard_by_lorelinde-d8u2phm.jpg');
+  background-image: url($chalkboard);
   background-size: cover;
   color: $font-color;
+  margin: 0 auto;
   width: 100%;
 }
 
 h4 {
-  color: $alt-font-color;
+  // color: $alt-font-color;
+  margin-top: -10px;
+}
+
+.modal .modal-content {
+  background-color: $trans-black;
+  border: 3px solid black;
+}
+
+.close {
+    color: #fff;
+    opacity: 1;
+
+    &:hover {
+      color: #fff;
+      opacity: 0.8;
+    }
+}
+
+.invalid {
+  color: red;
 }
 
 .dropdown {
@@ -37,27 +59,23 @@ h4 {
   color: $light-yellow;
 }
 
-.col-md-2 {
-  background-color: none;
-  // cursor: url('../images/X.png'), auto;
-  height: 150px;
-  // padding: 20px;
-
-  &:hover {
-    background-color: $aqua;
-  }
-
+.log-in-here {
+  height: 25px;
+  padding-right: 10px;
 }
 
 .main {
   height: 83%;
-  // margin-top: 1%;
-  width: 100%;
-  // border: 1px dashed yellow;
+  width: 90%;
+  margin: 0 auto;
+  // border: 1px dashed white;
+}
+
+div {
+  // border: 1px dashed white;
 }
 
 .score, .board, .user-stats, {
-  border: 1px dashed white;
   float: left;
 }
 
@@ -70,7 +88,6 @@ h4 {
   margin: 0 auto;
   padding: 40px 20px 10px 20px;
   height: 100px;
-  // border: 1px dashed white;
 }
 
 .x-score-block {
@@ -180,10 +197,26 @@ h4 {
   left:50%;
   margin-top: -25px;
   margin-left: -130px;
+  display: none
 }
 
 .new-game-img {
   height: 50px;
+}
+
+.main-title {
+  background-image: url($chalkboard);
+  margin-bottom: 10px;
+}
+
+.tictactoe {
+  width: 200px;
+}
+
+.onA {
+  width: 200px;
+  margin-top: -50px;
+  margin-bottom: -20px;
 }
 
 .shadowed {
@@ -204,19 +237,19 @@ h4 {
 .player1-turn {
   height: 8%;
   left: 30%;
-  // margin: 0 auto;
   position: fixed;
   top: 20%;
   transform: rotate(-18deg);
+  pointer-events: none;
 }
 
 .player2-turn {
   height: 8%;
   right: 30%;
-  // margin: 0 auto;
   position: fixed;
   top: 75%;
   transform: rotate(10deg);
+  pointer-events: none;
 }
 
 .winner {
@@ -254,7 +287,7 @@ h4 {
 }
 
 .game-history-table {
-  // background-color: $trans-black;
+  background-color: #EEE;
   color: $alt-font-color;
 }
 
@@ -277,11 +310,13 @@ h4 {
 
 .btn-game-history {
   margin-top: 60px;
+  pointer-events: none;
 }
 
 .btn-clear-score {
   position: relative;
   top: 370px;
+  pointer-events: none;
 }
 
 .stat-label {
@@ -299,14 +334,6 @@ h4 {
   &:hover {
     background-color: $light-yellow;
   }
-}
-
-.register-opp {
-  margin-top: 10px;
-}
-
-label {
-  color: $alt-font-color;
 }
 
 .marker {
