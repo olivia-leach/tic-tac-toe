@@ -7,5 +7,5 @@ $(() => {
   authEvents.addHandlers();
   $("#signOutButton").hide();
   $("#welcome").hide();
-  document.body.style.overflow = 'hidden';
+  $("#log-in-modal").modal('show');
 });
