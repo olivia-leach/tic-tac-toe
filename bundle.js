@@ -548,6 +548,9 @@ webpackJsonp([0],[
 	    app.game.over = true;
 	  }
 
+	  var data = "{\"game\": {\"cell\": {\"index\":" + square + ",\"value\": \"" + marker + "\"},\"over\":" + app.game.over + "}}";
+	  gameApi.update(gameUi.updateGameSuccess, gameUi.failure, data);
+
 	  if (app.game.over === true && app.numTurns < 8) {
 	    console.log("Game over. Player " + marker + " wins.");
 	    app.winner = marker;
@@ -610,9 +613,6 @@ webpackJsonp([0],[
 	      $("#cat-score-num").append('<img src="assets/images/one.png" class="score-num"/>');
 	    }
 	  }
-
-	  var data = "{\"game\": {\"cell\": {\"index\":" + square + ",\"value\": \"" + marker + "\"},\"over\":" + app.game.over + "}}";
-	  gameApi.update(gameUi.updateGameSuccess, gameUi.failure, data);
 
 	  if (app.game.over === true) {
 	    $("#player2turn").hide();
