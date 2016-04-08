@@ -1,45 +1,65 @@
-# tic tac toe game
+# tic-tac-toe game
 
 Project 1 for General Assembly Web Development Immersive.
+@olivia-leach -- Completed on 4/7/2016
+
+## Goal
+
+Create a working tic-tac-toe game with the following features:
+
+-   User register/log in/log out/change password functionality
+-   Switch turns between X and O
+-   Keep score between X, O, and ties
+-   Be able to see user stats when logged in:
+
+    -   No. games played
+    -   No. games won
+    -   Complete game history
 
 ## Approach
 
-* Implement in steps
-* Complete basic HTML/CSS
-* Complete JS game logic
-* Connect front end to API usin AJAX / jQuery
-* Array to represent gameboard
-* Don't let functionality suffer
-* Commit early and often
-* Branches:
-  * maintain a master branch that works
-  * feature branch --> get a feature complete & working (3-5 commits) --> merge that back in to master
+-   Structure basic bones of page layout with HTML/CSS: bootstrap and flexbox
+-   Connect user-based API events on the front end to API using AJAX/jQuery:
 
-## Deliverables
+    -   Log in (sign-in, POST request)
+    -   Log out (sign-out, DELETE request)
+    -   Register (sign-up, POST request)
+    -   Change Password (change-password, PATCH request)
 
--   A working browser game, built by you, hosted on GitHub Pages (or an alternative platform).
--   A git repository hosted on Github, with a link to your hosted game, and frequent commits dating back to the very beginning of the project
--   A readme.md file with explanations of the technologies used, the approach taken, unsolved problems, etc.
--   A link to your hosted working game in the URL section of your Github repo
-Links to wireframes and user stories, preferably in the README of your repo.
+-   Complete JS game logic: single array to represent game board:
 
--   Be deployed online, where the rest of the world can access it
--   Render a game board in the browser
--   Switch turns between X and O (or whichever markers you select)
--   Visually display which side won if a player gets three in a row or show a draw/"cat’s game" if neither wins
--   Use jQuery for DOM manipulation and event handling
--   Use AJAX for data storage and retrieval
--   Have login, logout, and change password functionality
--   Visually display the results of retrieving game information
--   Create and Update games.
+    -   One function to set up game board
+    -   One function for a 'turn':
 
-In addition, you must use separate files for your HTML, CSS, and JavaScript, and (where possible) use semantic markup for your HTML. And in general, try to stick with KISS (Keep It Stupidly Simple) and DRY (Don't Repeat Yourself) principles.
+        -   Check if game is over based on win conditions
+        -   If game is over, who won
 
-## Bonus
+-   Connect game-play js to board with jQuery event listeners on each game square
+-   Connect game-play API events on the front end to API using AJAX / jQuery:
 
--   If allowing players to compete from separate devices, display a "Waiting..." message while users are waiting to be matched
--   Keep track of multiple game rounds with a win counter
--   Allow players to customize their tokens (X, O, name, picture, etc)
--   Get inventive with your styling, e.g. use hover effects or animations to spiff things up
--   Add tableside chat to your game
--   Use localStorage to persist data locally, allowing games to continue after page refresh or loss of internet connectivity
+    -   Create new game (create, POST request)
+    -   Send move to back end (update, PATCH request)
+    -   Look up game history (index, GET request)
+
+-   Flush out HTML/CSS
+-   Add some fun design bonuses
+
+## Wireframe
+
+<https://app.moqups.com/olliiviia/o9hwhjxk/view>
+
+## User Stories
+
+-   As a user, I want to be able to have a log in account so that I can view my game history.
+-   As a user, I want an interactive scoreboard that tells me how many games I've won against an opponent.
+-   As a user, I want to be able to see my win/loss history.
+-   As a user, I want to be able to start a new game after I've just finished one.
+
+## Potential future updates (aka if I had more time...)
+
+-   Clean up js files (get rid of redundant code)
+-   Add cross-device functionality for 2 players
+-   Be able to click on an old game in the game history table and re-watch game play, or continue an unfinished game
+-   Draw line to show row/column/diagonal that won
+-   Animate drawing of X's and O's
+-   Change pointer to be image of X or O when mouse hovers over board
