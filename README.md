@@ -37,9 +37,9 @@ Create a working tic-tac-toe game with the following features:
 -   Connect gameplay js to board with jQuery event listeners on each game square
 -   Connect game-play API events on the front end to API using AJAX / jQuery:
 
-    -   Create new game (create)
-    -   Send move to back end (update)
-    -   Look up game history (index)
+    -   Create new game (create, POST request)
+    -   Send move to back end (update, PATCH request)
+    -   Look up game history (index, GET request)
 
 -   Flush out HTML/CSS
 -   Add some fun design bonuses
@@ -55,9 +55,11 @@ Create a working tic-tac-toe game with the following features:
 -   As a user, I want to be able to see my win/loss history.
 -   As a user, I want to be able to start a new game after I've just finished one.
 
-## Potential future updates
+## Potential future updates (aka if I had more time...)
 
--   Draw line to show row/column/diagnol that won
+-   Clean up js files (get rid of redundant code)
 -   Add cross-device functionality for 2 players
+-   Be able to click on an old game in the game history table and rewatch game play, or continue an unfinished game
+-   Draw line to show row/column/diagnol that won
 -   Animate drawing of X's and O's
 -   Change pointer to be image of X or O when mouse hovers over board
