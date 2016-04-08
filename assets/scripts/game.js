@@ -46,6 +46,9 @@ const turn = (board, marker, square) => {
     app.game.over = true;
   }
 
+  let data = "{\"game\": {\"cell\": {\"index\":" + square + ",\"value\": \"" + marker + "\"},\"over\":" + app.game.over + "}}";
+  gameApi.update(gameUi.updateGameSuccess, gameUi.failure, data);
+
   if (app.game.over === true && app.numTurns < 8) {
     console.log ("Game over. Player " + marker + " wins.");
     app.winner = marker;
@@ -111,9 +114,6 @@ const turn = (board, marker, square) => {
     }
 
   }
-
-  let data = "{\"game\": {\"cell\": {\"index\":" + square + ",\"value\": \"" + marker + "\"},\"over\":" + app.game.over + "}}";
-  gameApi.update(gameUi.updateGameSuccess, gameUi.failure, data);
 
   if (app.game.over === true) {
     $("#player2turn").hide();
