@@ -26,7 +26,7 @@ Create a working tic-tac-toe game with the following features:
     -   Register (sign-up, POST request)
     -   Change Password (change-password, PATCH request)
 
--   Complete JS game logic: single array to represent gameboard:
+-   Complete JS game logic: single array to represent game board:
 
     -   One function to set up game board
     -   One function for a 'turn':
@@ -34,7 +34,7 @@ Create a working tic-tac-toe game with the following features:
         -   Check if game is over based on win conditions
         -   If game is over, who won
 
--   Connect gameplay js to board with jQuery event listeners on each game square
+-   Connect game-play js to board with jQuery event listeners on each game square
 -   Connect game-play API events on the front end to API using AJAX / jQuery:
 
     -   Create new game (create, POST request)
@@ -50,7 +50,7 @@ Create a working tic-tac-toe game with the following features:
 
 ## User Stories
 
--   As a user, I want to be able to have a log in account so that I can view my game hisory.
+-   As a user, I want to be able to have a log in account so that I can view my game history.
 -   As a user, I want an interactive scoreboard that tells me how many games I've won against an opponent.
 -   As a user, I want to be able to see my win/loss history.
 -   As a user, I want to be able to start a new game after I've just finished one.
@@ -59,7 +59,7 @@ Create a working tic-tac-toe game with the following features:
 
 -   Clean up js files (get rid of redundant code)
 -   Add cross-device functionality for 2 players
--   Be able to click on an old game in the game history table and rewatch game play, or continue an unfinished game
--   Draw line to show row/column/diagnol that won
+-   Be able to click on an old game in the game history table and re-watch game play, or continue an unfinished game
+-   Draw line to show row/column/diagonal that won
 -   Animate drawing of X's and O's
 -   Change pointer to be image of X or O when mouse hovers over board
