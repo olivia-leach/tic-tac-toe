@@ -525,9 +525,6 @@ webpackJsonp([0],[
 	  var gameUi = __webpack_require__(8);
 	  var gameApi = __webpack_require__(7);
 
-	  // let rand = Math.floor(Math.random() * (80 - 20 + 1) + 20);
-	  // $("#player2turn").attr("margin-top",rand);
-
 	  console.log(marker + " plays on square " + square + ".");
 	  board[square] = marker;
 
@@ -562,6 +559,7 @@ webpackJsonp([0],[
 	  }
 
 	  if (app.game.over === true) {
+	    $("#game-history-table").find("tr:gt(0)").remove();
 	    gameApi.index(gameUi.indexGameSuccess, gameUi.failure);
 	    $(".square").css('pointer-events', 'none');
 	    $("#gameOver").slideUp(300).delay(100).fadeIn(400);
